@@ -1,0 +1,4 @@
+XcodeColors is an easy-to-use plugin for Xcode 3 & 4 developers.
+This project is designed to simplify software debugging process by colorizing debugger console output.
+
+See ColorLog project for usage demo.
