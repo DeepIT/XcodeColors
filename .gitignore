@@ -1,0 +1,5 @@
+build
+.svn
+.DS_Store
+*.xcodeproj/xcuserdata
+*.xcodeproj/project.xcworkspace

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+rm -rf ~/Library/Application\ Support/SIMBL/Plugins/XcodeColors.bundle 2>/dev/null
+#mkdir -p ~/Library/Application\ Support/SIMBL/Plugins/ 2>/dev/null
+#cp -r build/Release/XcodeColors.bundle ~/Library/Application\ Support/SIMBL/Plugins/
+
+rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin 2>/dev/null
+mkdir -p ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins 2>/dev/null
+cp -r build/Release/XcodeColors.bundle ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin
+
+echo Installed
