@@ -14,35 +14,6 @@
 #define LC_SEQ_MAC @"\033["
 #define LC_SEQ_IOS @"\xC2\xA0["
 
-BOOL isLogTextView(NSTextView* textView)
-{
-	if (!textView)
-		return NO;
-	NSString * textViewClass = NSStringFromClass([textView class]);
-	// Xcode Debuger View
-	if ([textViewClass isEqualToString:@"IDEConsoleTextView"]/* Xcode 4 */ || 
-					[textViewClass isEqualToString:@"PBXTtyText"]/* Xcode 3 */)
-		return YES;	
-	return NO;
-}
-
-BOOL isLogTextStorage(NSAttributedString * textStorage)
-{
-	id textView = nil;
-	if ([textStorage respondsToSelector:@selector(layoutManagers)])
-	{
-		id layoutManagers = [(NSTextStorage*)textStorage layoutManagers];
-		if ([layoutManagers count])
-		{
-			id layoutManager = [layoutManagers objectAtIndex:0];
-			if ([layoutManager respondsToSelector:@selector(firstTextView)])
-				textView = [layoutManager firstTextView];
-		}
-	}
-	
-	return isLogTextView(textView);
-}
-
 static IMP imp_ts_fixAttributesInRange = nil;
 
 @interface XcodeColors_NSTextStorage : NSTextStorage
@@ -52,16 +23,6 @@ static IMP imp_ts_fixAttributesInRange = nil;
 @end
 
 @implementation XcodeColors_NSTextStorage
-
-NSString* SeqReplacementWithLenght(NSUInteger length)
-{
-	if (!length)
-		return @"";
-	NSMutableString * res = [NSMutableString string];
-	while(length--)
-		[res appendString:@"\x1D"];// Logical Group Separator
-	return res;
-}
 
 void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 {
@@ -85,7 +46,7 @@ void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 					
 					// Background LBCL_*
 					@"0;40m"/*black*/,@"0;41m"/*red*/,@"0;42m"/*green*/,@"0;43m"/*yellow*/,@"0;44m"/*blue*/,@"0;45m"/*magenta*/,@"0;46m"/*cyan*/,@"0;47m"/*white*/,
-
+     
 					@"0m"/*nothing*/,@"00m"/*nothing*/};
 				int i;
 				for (i = 0; i < sizeof(ctrlSEQ)/sizeof(ctrlSEQ[0]); i++)
@@ -155,7 +116,7 @@ void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 				}
 			}
 			componentRange.length = [component length];
-			[textStorage addAttributes:attrs range:componentRange];
+   [textStorage addAttributes:attrs range:componentRange];
 			componentRange.location += componentRange.length + [seq length];
 			firstPass = NO;
 		}
@@ -163,7 +124,11 @@ void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 		for (NSValue * clearValue in clearSEQ)
 		{
 			NSRange range = [clearValue rangeValue];
-			[textStorage replaceCharactersInRange:range withString:SeqReplacementWithLenght(range.length)];
+			[textStorage addAttributes:
+    [NSDictionary dictionaryWithObjectsAndKeys:
+     [NSFont systemFontOfSize:0.001],NSFontAttributeName,
+     [NSColor clearColor],NSForegroundColorAttributeName,
+     nil] range:range];
 		}
 	}
 }
@@ -171,8 +136,7 @@ void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 -(void)fixAttributesInRange:(NSRange)aRange// NSTextStorage
 {	
 	imp_ts_fixAttributesInRange(self,_cmd,aRange);
-
-	if (getenv(XCODE_COLORS) && !strcmp(getenv(XCODE_COLORS),"YES") && isLogTextStorage(self))
+	if (getenv(XCODE_COLORS) && !strcmp(getenv(XCODE_COLORS),"YES"))
 	{
 		ApplyANSIColors(self,aRange,LC_SEQ_MAC);
 		ApplyANSIColors(self,aRange,LC_SEQ_IOS);
@@ -197,10 +161,10 @@ void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 
 +(void)load
 {
-	NSLog(@"%s,v,8",__PRETTY_FUNCTION__);
+	NSLog(@"%s,v,9",__PRETTY_FUNCTION__);
 	if (getenv(XCODE_COLORS) && !strcmp(getenv(XCODE_COLORS), "YES"))
 		return;
-
+ 
 	imp_ts_fixAttributesInRange = ReplaceInstanceMethod(NSTextStorage,fixAttributesInRange:,XcodeColors_NSTextStorage);
 	
 	setenv(XCODE_COLORS, "YES", 0);
@@ -232,10 +196,10 @@ void ApplyANSIColors(NSTextStorage * textStorage, NSRange range, NSString * seq)
 		if ([components count] == 4)
 		{   
 			return [NSColor 
-					colorWithDeviceRed:[[components objectAtIndex:0] floatValue]
-					green:[[components objectAtIndex:1] floatValue]
-					blue:[[components objectAtIndex:2] floatValue]
-					alpha:[[components objectAtIndex:3] floatValue]];
+           colorWithDeviceRed:[[components objectAtIndex:0] floatValue]
+           green:[[components objectAtIndex:1] floatValue]
+           blue:[[components objectAtIndex:2] floatValue]
+           alpha:[[components objectAtIndex:3] floatValue]];
 		}
 		if ([components count] == 1)
 		{
