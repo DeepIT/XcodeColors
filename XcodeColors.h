@@ -8,32 +8,15 @@
 
 #import <Cocoa/Cocoa.h>
 
+@interface XcodeColors_NSTextStorage : NSTextStorage
+
+- (void)fixAttributesInRange:(NSRange)aRange;
+
+@end
+
 @interface XcodeColors : NSObject
 
-// Foreground
-
-+(NSColor*)blackColor;
-+(NSColor*)redColor;
-+(NSColor*)greenColor;
-+(NSColor*)yellowColor;
-+(NSColor*)blueColor;
-+(NSColor*)magentaColor;
-+(NSColor*)cyanColor;
-+(NSColor*)whiteColor;
-
-// Background
-
-+(NSColor*)blackBackgroundColor;
-+(NSColor*)redBackgroundColor;
-+(NSColor*)greenBackgroundColor;
-+(NSColor*)yellowBackgroundColor;
-+(NSColor*)blueBackgroundColor;
-+(NSColor*)magentaBackgroundColor;
-+(NSColor*)cyanBackgroundColor;
-+(NSColor*)whiteBackgroundColor;
-
-// Plugin
-+(void)pluginDidLoad:(id)xcodeDirectCompatibility;
--(void)registerLaunchSystemDescriptions;
++ (void)pluginDidLoad:(id)xcodeDirectCompatibility;
+- (void)registerLaunchSystemDescriptions;
 
 @end
