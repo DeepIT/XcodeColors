@@ -17,18 +17,18 @@
 // To reset the foreground and background color (to default values) in one operation:
 // Insert the ESCAPE_SEQ into your string, followed by ";"
 
-#define ESCAPE_SEQ_MAC @"\033["
-#define ESCAPE_SEQ_IOS @"\xC2\xA0["
+#define XCODE_COLORS_ESCAPE_MAC @"\033["
+#define XCODE_COLORS_ESCAPE_IOS @"\xC2\xA0["
 
 #if TARGET_OS_IPHONE
-  #define ESCAPE_SEQ ESCAPE_SEQ_IOS
+  #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_IOS
 #else
-  #define ESCAPE_SEQ ESCAPE_SEQ_MAC
+  #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_MAC
 #endif
 
-#define SEQ_RESET_FG  ESCAPE_SEQ @"fg;" // Clear any foreground color
-#define SEQ_RESET_BG  ESCAPE_SEQ @"bg;" // Clear any background color
-#define SEQ_RESET     ESCAPE_SEQ @";"   // Clear any foreground or background color
+#define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
+#define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
+#define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";"   // Clear any foreground or background color
 
 @implementation AppDelegate
 
@@ -38,13 +38,16 @@
 {
 	NSLog(@"If you don't see colors below, make sure you follow the installation instructions in the README.");
 	
-	NSLog(ESCAPE_SEQ @"fg0,0,255;" @"Blue text" SEQ_RESET);
+	NSLog(XCODE_COLORS_ESCAPE @"fg0,0,255;" @"Blue text" XCODE_COLORS_RESET);
 	
-	NSLog(ESCAPE_SEQ @"bg220,0,0;" @"Red background" SEQ_RESET);
+	NSLog(XCODE_COLORS_ESCAPE @"bg220,0,0;" @"Red background" XCODE_COLORS_RESET);
 	
-	NSLog(ESCAPE_SEQ @"fg0,0,255;" ESCAPE_SEQ @"bg220,0,0;" @"Blue text on red background" SEQ_RESET);
+	NSLog(XCODE_COLORS_ESCAPE @"fg0,0,255;"
+		  XCODE_COLORS_ESCAPE @"bg220,0,0;"
+		  @"Blue text on red background"
+		  XCODE_COLORS_RESET);
 	
-	NSLog(ESCAPE_SEQ @"fg209,57,168;" @"You can supply your own RGB values!" SEQ_RESET);
+	NSLog(XCODE_COLORS_ESCAPE @"fg209,57,168;" @"You can supply your own RGB values!" XCODE_COLORS_RESET);
 }
 
 @end

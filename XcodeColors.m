@@ -32,18 +32,18 @@
 // Feel free to copy the define statements below into your code.
 // <COPY ME>
 
-#define ESCAPE_SEQ_MAC @"\033["
-#define ESCAPE_SEQ_IOS @"\xC2\xA0["
+#define XCODE_COLORS_ESCAPE_MAC @"\033["
+#define XCODE_COLORS_ESCAPE_IOS @"\xC2\xA0["
 
 #if TARGET_OS_IPHONE
-  #define ESCAPE_SEQ ESCAPE_SEQ_IOS
+  #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_IOS
 #else
-  #define ESCAPE_SEQ ESCAPE_SEQ_MAC
+  #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_MAC
 #endif
 
-#define SEQ_RESET_FG  ESCAPE_SEQ @"fg;" // Clear any foreground color
-#define SEQ_RESET_BG  ESCAPE_SEQ @"bg;" // Clear any background color
-#define SEQ_RESET     ESCAPE_SEQ @";"   // Clear any foreground or background color
+#define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
+#define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
+#define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";"   // Clear any foreground or background color
 
 // </COPY ME>
 
@@ -296,8 +296,8 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 	char *xcode_colors = getenv(XCODE_COLORS);
 	if (xcode_colors && (strcmp(xcode_colors, "YES") == 0))
 	{
-		ApplyANSIColors(self, aRange, ESCAPE_SEQ_MAC);
-		ApplyANSIColors(self, aRange, ESCAPE_SEQ_IOS);
+		ApplyANSIColors(self, aRange, XCODE_COLORS_ESCAPE_MAC);
+		ApplyANSIColors(self, aRange, XCODE_COLORS_ESCAPE_IOS);
 	}
 }
 
