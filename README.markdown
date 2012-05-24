@@ -5,10 +5,18 @@ This project is designed to enable colorizing debugger console output.
 
 ### XcodeColors installation instructions for Xcode 4:
 
-1. Compile the XcodeColors target for Release (not Debug).
+1. Install the XcodeColors.xcplugin package.
 
-    When you do this, the Xcode plugin is automatically copied to the proper location.  
-    This is done via the install script, run by xcb-install.pl via an Xcode build phase.
+    There are 2 ways to accomplish this:
+    - Download the XcodeColors.xcplugin.zip file from the downloads page.  
+        Unzip the file, which will give you a XcodeColors.xcplugin folder.  
+        Copy this folder to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"
+    - Compile from source.  
+        Download or clone the repository.  
+        Compile the XcodeColors target for Release (not Debug).  
+        When you do this, the Xcode plugin is automatically copied to the proper location.  
+        This is done via the xcb-install.pl install script that is run as part of an Xcode build phase.  
+        Validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"    
 
 2. Quit Xcode.
 
@@ -44,7 +52,7 @@ This project is designed to enable colorizing debugger console output.
     (gdb) quit
     ```
 
-    This step is required only once after Xcode start.
+    This step is required only once after Xcode starts.
 
 5. You're done!
 
