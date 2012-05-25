@@ -5,60 +5,32 @@ This project is designed to enable colorizing debugger console output.
 
 ### XcodeColors installation instructions for Xcode 4:
 
-1. Install the XcodeColors.xcplugin package.
+There are 2 ways to accomplish this:
 
-    There are 2 ways to accomplish this:
-    - Download the XcodeColors.xcplugin.zip file from the downloads page.  
-        Unzip the file, which will give you a XcodeColors.xcplugin folder.  
-        Copy this folder to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"
-    - Compile from source.  
-        Download or clone the repository.  
-        Compile the XcodeColors target for Release (not Debug).  
+1. **Simple install using precompiled xcode plugin**
+    - Download the XcodeColors.xcplugin.zip file from the downloads page  
+        https://github.com/robbiehanson/XcodeColors/downloads
+    - Unzip the downloaded file, which will give you the "XcodeColors.xcplugin" folder.  
+        Note that finder will likely not display the ".xcplugin" extension. This is normal.  
+        If you want you can verify the extension is there via Finder's "get info" or via the Terminal.
+    - Copy this folder to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
+        You might need to create the "Plug-ins" folder if it doesn't already exist. If so, double-check your spelling.
+    - Quit Xcode (if it's running)
+    - Launch Xcode.
+    - Want to see it in action?  
+        The repository contains an Xcode project with a TestXcodeColors target.  
+        You can run this target to see XcodeColors in action.
+
+2. **Compile from source**
+    - Download or clone the repository.  
+    - Compile the XcodeColors target for Release (not Debug).  
         When you do this, the Xcode plugin is automatically copied to the proper location.  
         This is done via the xcb-install.pl install script that is run as part of an Xcode build phase.  
-        Validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"    
-
-2. Quit Xcode.
-
-3. Add the following code to ~/.gdbinit:
-
-    ```shell
-    define xcodecolors
-    attach Xcode
-    p (char)[[NSBundle bundleWithPath:@"~/Library/Application Support/SIMBL/Plugins/XcodeColors.bundle"] load]
-    detach
-    end
-    ```
-
-    But what about LLDB? Relax, it also works for LLDB.
-
-4.  Launch Xcode
-
-5. Open the Terminal.
-
-    Run gdb (Type gdb then hit enter).  
-    You'll get a gdb command prompt.  
-    Run xcodecolors (Type xcodecolors then hit enter).  
-    It should look something like this in the Terminal:
-
-    ```shell
-    ~ $ gdb
-    (gdb) xcodecolors
-    Attaching to process ...
-    Reading symbols for shared libraries ...
-    .. done
-    0x00007fff84d242fa in mach_msg_trap ()
-    $1 = 1 '\001'
-    (gdb) quit
-    ```
-
-    This step is required only once after Xcode starts.
-
-5. You're done!
-
-    Want to see it in action?  
-    Run the TestXcodeColors target in this project.
-
+        Validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
+    - Quit Xcode (if it's running)
+    - Launch Xcode.
+    - Now compile and run the TestXcodeColors target (debug or release, doesn't matter).
+        This will test your installation, and you should see colors in your Xcode console.
 
 ### XcodeColors installation instructions for Xcode 3:
 
@@ -84,9 +56,9 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
 -  Enabling / Disabling XcodeColors
 
     ```objective-c
-    setenv(XCODE_COLORS, "YES", 0); // Enables XcodeColors (you obviously have to install it too)
+    setenv("XcodeColors", "YES", 0); // Enables XcodeColors (you obviously have to install it too)
     
-    setenv(XCODE_COLORS, "NO", 0); // Disables XcodeColors
+    setenv("XcodeColors", "NO", 0); // Disables XcodeColors
     ```
 
 - Using XcodeColors
