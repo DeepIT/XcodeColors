@@ -1,5 +1,13 @@
-XcodeColors is an easy-to-use plugin for Xcode 3 & 4.  
-This project is designed to enable colorizing debugger console output.
+XcodeColors allows you to use colors in the Xcode debugging console.  
+It's designed to aid in the debugging process. For example:
+- Make error messages stand out by printing them out in red.
+- Use different colors for logically separate parts of your code.
+
+You're not limited to a restricted color palate.  
+You can specify, in your source code, the exact RGB values you'd like to use.  
+You can specify foreground and/or background color(s).
+
+XcodeColors is a simple plugin for Xcode 3 & 4.  
 
 ***
 
@@ -29,7 +37,7 @@ There are 2 ways to accomplish this:
         Validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
     - Quit Xcode (if it's running)
     - Launch Xcode.
-    - Now compile and run the TestXcodeColors target (debug or release, doesn't matter).
+    - Now compile and run the TestXcodeColors target (debug or release, doesn't matter).  
         This will test your installation, and you should see colors in your Xcode console.
 
 ### XcodeColors installation instructions for Xcode 3:
