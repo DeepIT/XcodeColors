@@ -92,13 +92,6 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
     // Insert the ESCAPE into your string, followed by ";"
     
     #define XCODE_COLORS_ESCAPE_MAC @"\033["
-    #define XCODE_COLORS_ESCAPE_IOS @"\xC2\xA0["
-    
-    #if TARGET_OS_IPHONE
-      #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_IOS
-    #else
-      #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_MAC
-    #endif
     
     #define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
     #define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
