@@ -32,14 +32,7 @@
 // Feel free to copy the define statements below into your code.
 // <COPY ME>
 
-#define XCODE_COLORS_ESCAPE_MAC @"\033["
-#define XCODE_COLORS_ESCAPE_IOS @"\xC2\xA0["
-
-#if TARGET_OS_IPHONE
-  #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_IOS
-#else
-  #define XCODE_COLORS_ESCAPE  XCODE_COLORS_ESCAPE_MAC
-#endif
+#define XCODE_COLORS_ESCAPE @"\033["
 
 #define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
 #define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
@@ -296,8 +289,7 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 	char *xcode_colors = getenv(XCODE_COLORS);
 	if (xcode_colors && (strcmp(xcode_colors, "YES") == 0))
 	{
-		ApplyANSIColors(self, aRange, XCODE_COLORS_ESCAPE_MAC);
-		ApplyANSIColors(self, aRange, XCODE_COLORS_ESCAPE_IOS);
+		ApplyANSIColors(self, aRange, XCODE_COLORS_ESCAPE);
 	}
 }
 
@@ -350,7 +342,7 @@ IMP ReplaceInstanceMethod(Class sourceClass, SEL sourceSel, Class destinationCla
 
 + (void)load
 {
-	NSLog(@"XcodeColors: %@ (v10)", NSStringFromSelector(_cmd));
+	NSLog(@"XcodeColors: %@ (v10.1)", NSStringFromSelector(_cmd));
 	
 	char *xcode_colors = getenv(XCODE_COLORS);
 	if (xcode_colors && (strcmp(xcode_colors, "YES") != 0))
