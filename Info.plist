@@ -19,29 +19,33 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0.9</string>
 	<key>CFBundleSignature</key>
-	<string>????</string>
+	<string>BNDL</string>
 	<key>CFBundleVersion</key>
 	<string>109</string>
+	<key>CFPlugInFactories</key>
+	<dict>
+		<key>00000000-0000-0000-0000-000000000000</key>
+		<string>MyFactoryFunction</string>
+	</dict>
+	<key>CFPlugInTypes</key>
+	<dict>
+		<key>00000000-0000-0000-0000-000000000000</key>
+		<array/>
+		<key>Item 0</key>
+		<string>00000000-0000-0000-0000-000000000000</string>
+	</dict>
 	<key>LoadAtLaunch</key>
 	<true/>
-	<key>NSPrincipalClass</key>
-	<string>XcodeColors</string>
-	<key>SIMBLTargetApplications</key>
+	<key>DVTPlugInCompatibilityUUIDs</key>
 	<array>
-		<dict>
-			<key>BundleIdentifier</key>
-			<string>com.apple.Xcode</string>
-		</dict>
-		<dict>
-			<key>BundleIdentifier</key>
-			<string>com.apple.dt.Xcode</string>
-		</dict>
+		<string>63FC1C47-140D-42B0-BB4D-A10B2D225574</string>
+		<string>37B30044-3B14-46BA-ABAA-F01000C27B63</string>
 	</array>
+	<key>XC4Compatible</key>
+	<true/>
 	<key>XCGCReady</key>
 	<true/>
 	<key>XCPluginHasUI</key>
 	<false/>
-	<key>XC4Compatible</key>
-	<true/>
 </dict>
 </plist>
