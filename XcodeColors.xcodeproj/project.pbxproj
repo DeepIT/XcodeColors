@@ -245,7 +245,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XcodeColors_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "/Volumes/dagon/Users/pat/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				INSTALL_PATH = "${HOME}/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = XcodeColors;
 				WRAPPER_EXTENSION = xcplugin;
 			};
@@ -262,7 +262,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XcodeColors_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "/Volumes/dagon/Users/pat/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				INSTALL_PATH = "${HOME}/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = XcodeColors;
 				WRAPPER_EXTENSION = xcplugin;
 			};
