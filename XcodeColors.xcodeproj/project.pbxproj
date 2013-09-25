@@ -492,6 +492,7 @@
 				DC713212156B71A600F0C51A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
