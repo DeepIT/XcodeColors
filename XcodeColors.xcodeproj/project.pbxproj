@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		19A131E8123E5A9800B2532F /* XcodeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A131E7123E5A9800B2532F /* XcodeColors.m */; };
-		19FD4826133A59190072594E /* version.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 19FD4822133A58110072594E /* version.plist */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
 		DC7131FA156B71A500F0C51A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7131F9156B71A500F0C51A /* Cocoa.framework */; };
@@ -26,7 +25,6 @@
 			dstPath = Contents;
 			dstSubfolderSpec = 1;
 			files = (
-				19FD4826133A59190072594E /* version.plist in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,7 +37,6 @@
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		19A131E6123E5A9800B2532F /* XcodeColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XcodeColors.h; sourceTree = "<group>"; };
 		19A131E7123E5A9800B2532F /* XcodeColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XcodeColors.m; sourceTree = "<group>"; };
-		19FD4822133A58110072594E /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* XcodeColors_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XcodeColors_Prefix.pch; sourceTree = "<group>"; };
 		8D5B49B6048680CD000E48DA /* XcodeColors.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeColors.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,7 +102,6 @@
 		089C167CFE841241C02AAC07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				19FD4822133A58110072594E /* version.plist */,
 				8D5B49B7048680CD000E48DA /* Info.plist */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
 			);
