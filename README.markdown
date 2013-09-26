@@ -22,7 +22,7 @@ XcodeColors is a simple plugin for Xcode 3, 4 & 5.
     You can validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
 - Now completely Quit Xcode
 - Re-Launch Xcode, and re-open the XcodeColors project
-- Now run the TestXcodeColors target
+- Now run the TestXcodeColors target.  
     This will test your installation, and you should see colors in your Xcode console.
 
 ### XcodeColors installation instructions for Xcode 3:
