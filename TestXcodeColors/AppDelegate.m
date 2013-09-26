@@ -30,6 +30,8 @@
 #define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
 #define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";"   // Clear any foreground or background color
 
+#define LogBlue(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg0,0,255;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+
 @implementation AppDelegate
 
 @synthesize window = _window;
@@ -49,6 +51,8 @@
 		  XCODE_COLORS_RESET);
 	
 	NSLog(XCODE_COLORS_ESCAPE @"fg209,57,168;" @"You can supply your own RGB values!" XCODE_COLORS_RESET);
+	
+	LogBlue(@"Blue text via macro");
 }
 
 @end
