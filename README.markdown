@@ -7,38 +7,23 @@ You're not limited to a restricted color palate.
 You can specify, in your source code, the exact RGB values you'd like to use.  
 You can specify foreground and/or background color(s).
 
-XcodeColors is a simple plugin for Xcode 3 & 4.  
+XcodeColors is a simple plugin for Xcode 3, 4 & 5.  
 
 ***
 
-### XcodeColors installation instructions for Xcode 4:
+### XcodeColors installation instructions for Xcode 4 & 5:
 
-There are 2 ways to accomplish this:
-
-1. **Simple install using precompiled xcode plugin**
-    - Download the XcodeColors.xcplugin.zip file from the downloads page  
-        https://github.com/robbiehanson/XcodeColors/downloads
-    - Unzip the downloaded file, which will give you the "XcodeColors.xcplugin" folder.  
-        Note that finder will likely not display the ".xcplugin" extension. This is normal.  
-        If you want you can verify the extension is there via Finder's "get info" or via the Terminal.
-    - Copy this folder to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
-        You might need to create the "Plug-ins" folder if it doesn't already exist. If so, double-check your spelling.
-    - Quit Xcode (if it's running)
-    - Launch Xcode.
-    - Want to see it in action?  
-        The repository contains an Xcode project with a TestXcodeColors target.  
-        You can run this target to see XcodeColors in action.
-
-2. **Compile from source**
-    - Download or clone the repository.  
-    - Compile the XcodeColors target for Release (not Debug).  
-        When you do this, the Xcode plugin is automatically copied to the proper location.  
-        This is done via the xcb-install.pl install script that is run as part of an Xcode build phase.  
-        Validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
-    - Quit Xcode (if it's running)
-    - Launch Xcode.
-    - Now compile and run the TestXcodeColors target (debug or release, doesn't matter).  
-        This will test your installation, and you should see colors in your Xcode console.
+- Download or clone the repository.
+- Open the XcodeColors project with Xcode
+- If compiling for Xcode 4, then change the schemes to use the Xcode4 build configuration (instead of the Xcode5 build configuration which is the default)
+- Compile the XcodeColors target.  
+    When you do this, the Xcode plugin is automatically copied to the proper location.  
+    This is done via the build settings.
+    You can validate the plugin was copied to "~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XcodeColors.xcplugin"  
+- Now completely Quit Xcode
+- Re-Launch Xcode, and re-open the XcodeColors project
+- Now run the TestXcodeColors target
+    This will test your installation, and you should see colors in your Xcode console.
 
 ### XcodeColors installation instructions for Xcode 3:
 
@@ -50,6 +35,15 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
 ***
 
 ### How to use XcodeColors
+
+**There are 2 ways to use XcodeColors:**
+
+1. **Manually specify the colors inside NSLog (or create custom macros)**
+2. **Use CocoaLumberjack**
+
+***
+
+### Option 1: Manual Use / Custom Macros
 
 -  Testing to see if XcodeColors is installed and enabled:
 
@@ -98,8 +92,7 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
     #define XCODE_COLORS_RESET     XCODE_COLORS_ESCAPE @";"   // Clear any foreground or background color
     ```
     
-    Then feel free to colorize your log statements however you see fit!  
-    Here's an example to get you started:
+    To manually colorize your log statements, you surround the log statements with the color options:
     
     ```objective-c
     NSLog(XCODE_COLORS_ESCAPE @"fg0,0,255;" @"Blue text" XCODE_COLORS_RESET);
@@ -114,9 +107,26 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
     NSLog(XCODE_COLORS_ESCAPE @"fg209,57,168;" @"You can supply your own RGB values!" XCODE_COLORS_RESET);
     ```
 
+- Defining macros
+  
+    You may prefer to use macros to keep your code looking a bit cleaner.  
+    Here's an example to get you started:
+
+    ```objective-c
+    #define LogBlue(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg0,0,255;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+    #define LogRed(frmt, ...) NSLog((XCODE_COLORS_ESCAPE @"fg255,0,0;" frmt XCODE_COLORS_RESET), ##__VA_ARGS__)
+    ```
+    
+    And then you could just replace NSLog with LogBlue like so:
+    
+    ```objective-c
+    LogBlue(@"Configuring sprocket...");
+    LogRed(@"Sprocket error: %@", error);
+    ```
+
 ***
 
-### CocoaLumberjack
+### Option 2: CocoaLumberjack
 
 The [CocoaLumberjack](https://github.com/robbiehanson/CocoaLumberjack) framework natively supports XcodeColors!  
 Lumberjack is a fast & simple, yet powerful & flexible logging framework for Mac and iOS.
