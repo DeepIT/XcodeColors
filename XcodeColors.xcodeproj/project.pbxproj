@@ -38,7 +38,7 @@
 		19FCB50512410E410095CF63 /* MethodReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodReplace.m; sourceTree = "<group>"; };
 		19FD4822133A58110072594E /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
 		32DBCF630370AF2F00C91783 /* XcodeColors_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XcodeColors_Prefix.pch; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* XcodeColors.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeColors.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeColors.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
@@ -118,7 +118,7 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* XcodeColors.bundle */,
+				8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -151,7 +151,7 @@
 			name = XcodeColors;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = XcodeColors;
-			productReference = 8D5B49B6048680CD000E48DA /* XcodeColors.bundle */;
+			productReference = 8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -160,7 +160,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "XcodeColors" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -236,16 +236,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XcodeColors_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = XcodeColors;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Debug;
 		};
@@ -253,44 +257,44 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XcodeColors_Prefix.pch;
 				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
 				PRODUCT_NAME = XcodeColors;
-				WRAPPER_EXTENSION = bundle;
+				WRAPPER_EXTENSION = xcplugin;
 			};
 			name = Release;
 		};
 		1DEB913F08733D840010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Igor Belyaletdinov";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
 		1DEB914008733D840010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Igor Belyaletdinov";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = macosx10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
