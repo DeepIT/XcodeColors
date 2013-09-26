@@ -36,7 +36,8 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	NSLog(@"If you don't see colors below, make sure you follow the installation instructions in the README.");
+	NSLog(@"After building the XcodeColors plugin for the first time, you MUST RESTART XCODE.");
+	NSLog(@"If you still don't see colors below, please consult the README.");
 	
 	NSLog(XCODE_COLORS_ESCAPE @"fg0,0,255;" @"Blue text" XCODE_COLORS_RESET);
 	
