@@ -55,4 +55,8 @@
 	LogBlue(@"Blue text via macro");
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication
+{
+	return YES;
+}
 @end
