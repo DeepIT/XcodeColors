@@ -25,6 +25,8 @@ XcodeColors is a simple plugin for Xcode 3, 4 & 5.
 - Now run the TestXcodeColors target.  
     This will test your installation, and you should see colors in your Xcode console.
 
+Did you **upgrade Xcode** and now XcodeColors is **"broken"**? Get the fix here: **[XcodeUpdates](https://github.com/robbiehanson/XcodeColors/wiki/XcodeUpdates)**.
+
 ### XcodeColors installation instructions for Xcode 3:
 
 Wow, you're still running Xcode 3?  
