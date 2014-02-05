@@ -174,8 +174,8 @@
 			children = (
 				DC713201156B71A500F0C51A /* TestXcodeColors-Info.plist */,
 				DC713202156B71A500F0C51A /* InfoPlist.strings */,
-				DC713205156B71A500F0C51A /* main.m */,
 				DC713207156B71A500F0C51A /* TestXcodeColors-Prefix.pch */,
+				DC713205156B71A500F0C51A /* main.m */,
 				DC713208156B71A500F0C51A /* Credits.rtf */,
 			);
 			name = "Supporting Files";
