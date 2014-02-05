@@ -11,7 +11,7 @@ XcodeColors is a simple plugin for Xcode 3, 4 & 5.
 
 ***
 
-### XcodeColors installation instructions for Xcode 4 & 5:
+### XcodeColors installation instructions for Xcode 4 & 5.X:
 
 - Download or clone the repository.
 - Open the XcodeColors project with Xcode
