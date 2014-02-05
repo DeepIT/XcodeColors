@@ -85,7 +85,7 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
     // To reset the foreground and background color (to default values) in one operation:
     // Insert the ESCAPE into your string, followed by ";"
     
-    #define XCODE_COLORS_ESCAPE_MAC @"\033["
+    #define XCODE_COLORS_ESCAPE @"\033["
     
     #define XCODE_COLORS_RESET_FG  XCODE_COLORS_ESCAPE @"fg;" // Clear any foreground color
     #define XCODE_COLORS_RESET_BG  XCODE_COLORS_ESCAPE @"bg;" // Clear any background color
