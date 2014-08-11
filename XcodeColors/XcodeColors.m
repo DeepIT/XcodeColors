@@ -342,8 +342,6 @@ IMP ReplaceInstanceMethod(Class sourceClass, SEL sourceSel, Class destinationCla
 
 + (void)load
 {
-	NSLog(@"XcodeColors: %@ (v10.1)", NSStringFromSelector(_cmd));
-	
 	char *xcode_colors = getenv(XCODE_COLORS);
 	if (xcode_colors && (strcmp(xcode_colors, "YES") != 0))
 		return;
@@ -353,16 +351,6 @@ IMP ReplaceInstanceMethod(Class sourceClass, SEL sourceSel, Class destinationCla
 							  [XcodeColors_NSTextStorage class], @selector(fixAttributesInRange:));
 	
 	setenv(XCODE_COLORS, "YES", 0);
-}
-
-+ (void)pluginDidLoad:(id)xcodeDirectCompatibility
-{
-	NSLog(@"XcodeColors: %@", NSStringFromSelector(_cmd));
-}
-
-- (void)registerLaunchSystemDescriptions
-{
-	NSLog(@"XcodeColors: %@", NSStringFromSelector(_cmd));
 }
 
 @end
