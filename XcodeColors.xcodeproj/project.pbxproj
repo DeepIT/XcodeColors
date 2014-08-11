@@ -254,7 +254,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0600;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "XcodeColors" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -362,25 +362,25 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		DC6E8ED417F4F0B400373006 /* Xcode5 */ = {
+		DC6E8ED417F4F0B400373006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				SDKROOT = macosx;
 			};
-			name = Xcode5;
+			name = Release;
 		};
-		DC6E8ED517F4F0B400373006 /* Xcode5 */ = {
+		DC6E8ED517F4F0B400373006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEPLOYMENT_LOCATION = YES;
 				DSTROOT = "$(HOME)";
-				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = XcodeColors/XcodeColors_Prefix.pch;
 				INFOPLIST_FILE = XcodeColors/Info.plist;
@@ -388,13 +388,14 @@
 				PRODUCT_NAME = XcodeColors;
 				WRAPPER_EXTENSION = xcplugin;
 			};
-			name = Xcode5;
+			name = Release;
 		};
-		DC6E8ED617F4F0B400373006 /* Xcode5 */ = {
+		DC6E8ED617F4F0B400373006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -408,55 +409,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
-			name = Xcode5;
-		};
-		DC6E8ED717F4F0BD00373006 /* Xcode4 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				SDKROOT = macosx;
-			};
-			name = Xcode4;
-		};
-		DC6E8ED817F4F0BD00373006 /* Xcode4 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEPLOYMENT_LOCATION = YES;
-				DSTROOT = "$(HOME)";
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = XcodeColors/XcodeColors_Prefix.pch;
-				INFOPLIST_FILE = XcodeColors/Info.plist;
-				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
-				PRODUCT_NAME = XcodeColors;
-				WRAPPER_EXTENSION = xcplugin;
-			};
-			name = Xcode4;
-		};
-		DC6E8ED917F4F0BD00373006 /* Xcode4 */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = YES;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TestXcodeColors/TestXcodeColors-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				INFOPLIST_FILE = "TestXcodeColors/TestXcodeColors-Info.plist";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Xcode4;
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
@@ -464,29 +417,26 @@
 		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "XcodeColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC6E8ED817F4F0BD00373006 /* Xcode4 */,
-				DC6E8ED517F4F0B400373006 /* Xcode5 */,
+				DC6E8ED517F4F0B400373006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Xcode5;
+			defaultConfigurationName = Release;
 		};
 		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "XcodeColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC6E8ED717F4F0BD00373006 /* Xcode4 */,
-				DC6E8ED417F4F0B400373006 /* Xcode5 */,
+				DC6E8ED417F4F0B400373006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Xcode5;
+			defaultConfigurationName = Release;
 		};
 		DC713213156B71A600F0C51A /* Build configuration list for PBXNativeTarget "TestXcodeColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC6E8ED917F4F0BD00373006 /* Xcode4 */,
-				DC6E8ED617F4F0B400373006 /* Xcode5 */,
+				DC6E8ED617F4F0B400373006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Xcode5;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
