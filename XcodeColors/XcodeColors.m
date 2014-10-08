@@ -8,6 +8,7 @@
 
 #import "XcodeColors.h"
 #import <objc/runtime.h>
+#import "JRSwizzle.h"
 
 #define XCODE_COLORS "XcodeColors"
 
@@ -40,11 +41,9 @@
 
 // </COPY ME>
 
-static IMP IMP_NSTextStorage_fixAttributesInRange = nil;
 
 
-
-@implementation XcodeColors_NSTextStorage
+@implementation NSTextStorage (XcodeColors)
 
 void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSString *escapeSeq)
 {
@@ -275,14 +274,15 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 	}
 }
 
-- (void)fixAttributesInRange:(NSRange)aRange
+- (void)xc_fixAttributesInRange:(NSRange)aRange
 {
 	// This method "overrides" the method within NSTextStorage.
 	
 	// First we invoke the actual NSTextStorage method.
 	// This allows it to do any normal processing.
 	
-	IMP_NSTextStorage_fixAttributesInRange(self, _cmd, aRange);
+	// Swizzling makes this look like a recursive call but it's not -- it calls the original!
+	[self xc_fixAttributesInRange:aRange];
 	
 	// Then we scan for our special escape sequences, and apply desired color attributes.
 	
@@ -295,62 +295,33 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 
 @end
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-@implementation XcodeColors
 
-IMP ReplaceInstanceMethod(Class sourceClass, SEL sourceSel, Class destinationClass, SEL destinationSel)
-{
-	if (!sourceSel || !sourceClass || !destinationClass)
-	{
-		NSLog(@"XcodeColors: Missing parameter to ReplaceInstanceMethod");
-		return nil;
-	}
-	
-	if (!destinationSel)
-		destinationSel = sourceSel;
-	
-	Method sourceMethod = class_getInstanceMethod(sourceClass, sourceSel);
-	if (!sourceMethod)
-	{
-		NSLog(@"XcodeColors: Unable to get sourceMethod");
-		return nil;
-	}
-	
-	IMP prevImplementation = method_getImplementation(sourceMethod);
-	
-	Method destinationMethod = class_getInstanceMethod(destinationClass, destinationSel);
-	if (!destinationMethod)
-	{
-		NSLog(@"XcodeColors: Unable to get destinationMethod");
-		return nil;
-	}
-	
-	IMP newImplementation = method_getImplementation(destinationMethod);
-	if (!newImplementation)
-	{
-		NSLog(@"XcodeColors: Unable to get newImplementation");
-		return nil;
-	}
-	
-	method_setImplementation(sourceMethod, newImplementation);
-	
-	return prevImplementation;
-}
+@implementation XcodeColors
 
 + (void)load
 {
-	char *xcode_colors = getenv(XCODE_COLORS);
-	if (xcode_colors && (strcmp(xcode_colors, "YES") != 0))
-		return;
-	
-	IMP_NSTextStorage_fixAttributesInRange =
-	    ReplaceInstanceMethod([NSTextStorage class], @selector(fixAttributesInRange:),
-							  [XcodeColors_NSTextStorage class], @selector(fixAttributesInRange:));
-	
-	setenv(XCODE_COLORS, "YES", 0);
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		char *xcode_colors = getenv(XCODE_COLORS);
+		if (xcode_colors && (strcmp(xcode_colors, "YES") != 0))
+			return;
+		
+		SEL origSel = @selector(fixAttributesInRange:);
+		SEL altSel = @selector(xc_fixAttributesInRange:);
+		NSError *error = nil;
+		
+		if (![NSTextStorage jr_swizzleMethod:origSel withMethod:altSel error:&error]) {
+			NSLog(@"XcodeColors: Error swizzling methods: %@", error);
+			return;
+		}
+		
+		setenv(XCODE_COLORS, "YES", 0);
+	});
 }
 
 @end
