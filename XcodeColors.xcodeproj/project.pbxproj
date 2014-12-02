@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		D253754619E5E84700AF94FA /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D253754519E5E84700AF94FA /* JRSwizzle.m */; };
 		DC7131FA156B71A500F0C51A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7131F9156B71A500F0C51A /* Cocoa.framework */; };
 		DC713204156B71A500F0C51A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC713202156B71A500F0C51A /* InfoPlist.strings */; };
 		DC713206156B71A500F0C51A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC713205156B71A500F0C51A /* main.m */; };
@@ -33,6 +34,8 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeColors.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D253754419E5E84700AF94FA /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = XcodeColors/JRSwizzle.h; sourceTree = "<group>"; };
+		D253754519E5E84700AF94FA /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = XcodeColors/JRSwizzle.m; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 		DC7131F6156B71A500F0C51A /* TestXcodeColors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestXcodeColors.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC7131F9156B71A500F0C51A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -98,6 +101,8 @@
 			children = (
 				DCCCCFF317F4F7630097500C /* XcodeColors.h */,
 				DCCCCFF417F4F7630097500C /* XcodeColors.m */,
+				D253754419E5E84700AF94FA /* JRSwizzle.h */,
+				D253754519E5E84700AF94FA /* JRSwizzle.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D253754619E5E84700AF94FA /* JRSwizzle.m in Sources */,
 				DCCCCFF517F4F7630097500C /* XcodeColors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

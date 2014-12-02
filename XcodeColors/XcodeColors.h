@@ -8,9 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface XcodeColors_NSTextStorage : NSTextStorage
+@interface NSTextStorage(XcodeColors)
 
-- (void)fixAttributesInRange:(NSRange)aRange;
+- (void)xc_fixAttributesInRange:(NSRange)aRange;
 
 @end
 
