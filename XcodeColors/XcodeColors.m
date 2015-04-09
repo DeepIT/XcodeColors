@@ -305,6 +305,8 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 
 + (void)load
 {
+//	NSLog(@"XcodeColors: %@", NSStringFromSelector(_cmd));
+
 	static dispatch_once_t onceToken;
 	dispatch_once(&onceToken, ^{
 		char *xcode_colors = getenv(XCODE_COLORS);
@@ -323,5 +325,16 @@ void ApplyANSIColors(NSTextStorage *textStorage, NSRange textStorageRange, NSStr
 		setenv(XCODE_COLORS, "YES", 0);
 	});
 }
+
++ (void)pluginDidLoad:(id)xcodeDirectCompatibility
+{
+//	NSLog(@"XcodeColors: %@", NSStringFromSelector(_cmd));
+}
+
+- (void)registerLaunchSystemDescriptions
+{
+//	NSLog(@"XcodeColors: %@", NSStringFromSelector(_cmd));
+}
+
 
 @end

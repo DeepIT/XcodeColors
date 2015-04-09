@@ -191,6 +191,9 @@ And if color isn't available (e.g. XcodeColors isn't installed), then the framew
 Plus Lumberjack colors automatically work if you run your application from within a terminal! (E.g. Terminal.app, not Xcode) If your terminal supports color (xterm-color or xterm-256color) like the Terminal.app in Lion, then Lumberjack automatically maps your color customizations to the closest available color supported by the shell!
 
 ```objective-c
+// Enable XcodeColors 
+setenv("XcodeColors", "YES", 0);
+
 // Standard lumberjack initialization
 [DDLog addLogger:[DDTTYLogger sharedInstance]];
 
@@ -215,7 +218,7 @@ UIColor *pink = [UIColor colorWithRed:(255/255.0) green:(58/255.0) blue:(159/255
 NSColor *pink = [NSColor colorWithCalibratedRed:(255/255.0) green:(58/255.0) blue:(159/255.0) alpha:1.0];
 #endif
 
-[[DDTTYLogger sharedInstance] setForegroundColor:pink backgroundColor:nil forFlag:LOG_FLAG_INFO];
+[[DDTTYLogger sharedInstance] setForegroundColor:pink backgroundColor:nil forFlag:DDLogFlagInfo];
 
 DDLogInfo(@"Warming up printer (post-customization)"); // Pink !
 ```
