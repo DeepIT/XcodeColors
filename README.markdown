@@ -7,11 +7,11 @@ You're not limited to a restricted color palate.
 You can specify, in your source code, the exact RGB values you'd like to use.  
 You can specify foreground and/or background color(s).
 
-XcodeColors is a simple plugin for Xcode 3, 4 & 5.  
+XcodeColors is a simple plugin for Xcode 3, 4, 5 & 6  
 
 ***
 
-### XcodeColors installation instructions for Xcode 4 & 5.X:
+### XcodeColors installation instructions for Xcode 4, 5 & 6:
 
 - Download or clone the repository.
 - Open the XcodeColors project with Xcode
