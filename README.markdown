@@ -27,6 +27,10 @@ XcodeColors is a simple plugin for Xcode 3, 4, 5 & 6
 
 Did you **upgrade Xcode** and now XcodeColors is **"broken"**? Get the fix here: **[XcodeUpdates](https://github.com/robbiehanson/XcodeColors/wiki/XcodeUpdates)**.
 
+```
+$ ./update_compat.sh
+```
+
 ### XcodeColors installation instructions for Xcode 3:
 
 Wow, you're still running Xcode 3?  
