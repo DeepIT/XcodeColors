@@ -7,7 +7,7 @@ echo "UUID $uuid"
 echo ""
 
 # check UUID
-plist=$(pwd)/XcodeColors/Info
+plist=$(pwd)/XcodeColors/Info.plist
 if [ -n "$(defaults read '$plist' | grep $uuid)" ] ; then
     echo "UUID is already added to Info.plist"
     exit
