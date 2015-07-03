@@ -8,14 +8,14 @@ echo ""
 
 # check UUID
 plist=$(pwd)/XcodeColors/Info.plist
-if [ -n "$(defaults read '$plist' | grep $uuid)" ] ; then
-    echo "UUID is already added to Info.plist"
+if [ -n "$(defaults read "$plist" | grep $uuid)" ] ; then
+    echo "UUID is already added to $plist"
     exit
 fi
 
 # add UUID to .plist
-echo "Add UUID to '$plist'"
-defaults write '$plist' DVTPlugInCompatibilityUUIDs -array-add $uuid
+echo "Add UUID to $plist"
+defaults write "$plist" DVTPlugInCompatibilityUUIDs -array-add $uuid
 
 # show the result
-defaults read '$plist'
+defaults read "$plist"
