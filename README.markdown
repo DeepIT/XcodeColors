@@ -54,7 +54,7 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
 -  Testing to see if XcodeColors is installed and enabled:
 
     ```objective-c
-    char *xcode_colors = getenv(XCODE_COLORS);
+    char *xcode_colors = getenv("XcodeColors");
     if (xcode_colors && (strcmp(xcode_colors, "YES") == 0))
     {
         // XcodeColors is installed and enabled!
