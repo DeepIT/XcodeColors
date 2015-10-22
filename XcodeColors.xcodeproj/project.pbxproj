@@ -391,7 +391,7 @@
 				GCC_PREFIX_HEADER = XcodeColors/XcodeColors_Prefix.pch;
 				INFOPLIST_FILE = XcodeColors/Info.plist;
 				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.DeepIT.${PRODUCT_NAME}";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deusty.${PRODUCT_NAME}";
 				PRODUCT_NAME = XcodeColors;
 				WRAPPER_EXTENSION = xcplugin;
 			};
