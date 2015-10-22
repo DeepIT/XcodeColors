@@ -7,11 +7,11 @@ You're not limited to a restricted color palate.
 You can specify, in your source code, the exact RGB values you'd like to use.  
 You can specify foreground and/or background color(s).
 
-XcodeColors is a simple plugin for Xcode 3, 4, 5 & 6  
+XcodeColors is a simple plugin for Xcode 3, 4, 5, 6 & 7  
 
 ***
 
-### XcodeColors installation instructions for Xcode 4, 5 & 6:
+### XcodeColors installation instructions for Xcode 4, 5, 6 & 7:
 
 - Download or clone the repository.
 - Open the XcodeColors project with Xcode
@@ -181,7 +181,7 @@ Lumberjack is a fast & simple, yet powerful & flexible logging framework for Mac
 
 From its GitHub page:
 
-> [Lumberjack] is similar in concept to other popular logging frameworks such as log4j,
+> Lumberjack is similar in concept to other popular logging frameworks such as log4j,
 > yet is designed specifically for Objective-C, and takes advantage of features such as
 > multi-threading, grand central dispatch (if available), lockless atomic operations,
 > and the dynamic nature of the Objective-C runtime.
