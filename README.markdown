@@ -179,7 +179,7 @@ And then you can log within a Swift method like so:
 The [CocoaLumberjack](https://github.com/robbiehanson/CocoaLumberjack) framework natively supports XcodeColors!  
 Lumberjack is a fast & simple, yet powerful & flexible logging framework for Mac and iOS.
 
-From it's GitHub page:
+From its GitHub page:
 
 > [Lumberjack] is similar in concept to other popular logging frameworks such as log4j,
 > yet is designed specifically for Objective-C, and takes advantage of features such as
