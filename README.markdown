@@ -42,10 +42,11 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
 
 ### How to use XcodeColors
 
-**There are 2 ways to use XcodeColors:**
+**There are 3 ways to use XcodeColors:**
 
-1. **Manually specify the colors inside NSLog (or create custom macros)**
-2. **Use CocoaLumberjack**
+1. [**Manually specify the colors inside NSLog (or create custom macros)**](#option-1-manual-use--custom-macros)
+2. [**Use CocoaLumberjack**](#option-2-cocoalumberjack) (for Objective-C projects)
+3. [**Use CleanroomLogger**](#option-3-cleanroomlogger) (for Swift projects)
 
 ***
 
@@ -226,3 +227,33 @@ NSColor *pink = [NSColor colorWithCalibratedRed:(255/255.0) green:(58/255.0) blu
 
 DDLogInfo(@"Warming up printer (post-customization)"); // Pink !
 ```
+
+***
+
+### Option 3: CleanroomLogger
+
+[CleanroomLogger](https://github.com/emaloney/CleanroomLogger) is a popular pure-Swift logging API for iOS, Mac OS X, tvOS and watchOS that is designed to be simple, extensible, lightweight and performant.
+
+CleanroomLogger is a *real* console logger, meaning that it writes to the Apple System Log (ASL) facility and not just to standard output.
+
+[XcodeColors support](https://github.com/emaloney/CleanroomLogger#xcodecolors-support) is included in CleanroomLogger, and by default, when the `XcodeColors` environment variable is set to `YES`, CleanroomLogger will colorize log output based on the [*severity*](https://rawgit.com/emaloney/CleanroomLogger/master/Documentation/API/Enums/LogSeverity.html) of the message:
+
+<img alt="CleanroomLogger's default XcodeColors log severity colorization" src="https://raw.githubusercontent.com/emaloney/CleanroomLogger/master/Documentation/Images/XcodeColors-sample.png" width="695" height="120"/>
+
+Let's say you had an `AppDelegate.swift` file with an `import CleanroomLogger` statement and the lines:
+
+```swift
+Log.verbose?.trace()
+Log.debug?.value(self)
+Log.info?.message("These pretzels are making me thirsty")
+Log.warning?.message("The ocean called, they're running out of shrimp!")
+Log.error?.message("The database connection failed")
+```
+
+With CleanroomLogger and XcodeColors, you would see colorized log output looking something like:
+
+<img alt="CleanroomLogger code example" src="https://raw.githubusercontent.com/emaloney/CleanroomLogger/master/Documentation/Images/XcodeColors-code-example.png" width="705" height="105"/>
+
+CleanroomLogger lets developers supply their own [`ColorTable`](https://rawgit.com/emaloney/CleanroomLogger/master/Documentation/API/Protocols/ColorTable.html) to customize the default color scheme. Default colorization can also be turned off entirely, and an [`XcodeColorsColorizer`](https://rawgit.com/emaloney/CleanroomLogger/master/Documentation/API/Structs/XcodeColorsColorizer.html) instance can be used to manually apply XcodeColors escape sequences to strings.
+
+For further details, visit [the CleanroomLogger API documentation](https://rawgit.com/emaloney/CleanroomLogger/master/Documentation/API/index.html).
