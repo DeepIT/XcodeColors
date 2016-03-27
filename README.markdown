@@ -45,7 +45,7 @@ http://deepitpro.com/en/articles/XcodeColors/info/index.shtml
 **There are 3 ways to use XcodeColors:**
 
 1. [**Manually specify the colors inside NSLog (or create custom macros)**](#option-1-manual-use--custom-macros)
-2. [**Use CocoaLumberjack**](#option-2-cocoalumberjack) (for Objective-C projects)
+2. [**Use CocoaLumberjack**](#option-2-cocoalumberjack) (for Objective-C & Swift projects)
 3. [**Use CleanroomLogger**](#option-3-cleanroomlogger) (for Swift projects)
 
 ***
