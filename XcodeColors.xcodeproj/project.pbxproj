@@ -7,40 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		19A131E8123E5A9800B2532F /* XcodeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 19A131E7123E5A9800B2532F /* XcodeColors.m */; };
-		19FCB50612410E410095CF63 /* MethodReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 19FCB50512410E410095CF63 /* MethodReplace.m */; };
-		19FD4826133A59190072594E /* version.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 19FD4822133A58110072594E /* version.plist */; };
-		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */; };
+		D253754619E5E84700AF94FA /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D253754519E5E84700AF94FA /* JRSwizzle.m */; };
+		DC7131FA156B71A500F0C51A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC7131F9156B71A500F0C51A /* Cocoa.framework */; };
+		DC713204156B71A500F0C51A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DC713202156B71A500F0C51A /* InfoPlist.strings */; };
+		DC713206156B71A500F0C51A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DC713205156B71A500F0C51A /* main.m */; };
+		DC71320A156B71A500F0C51A /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = DC713208156B71A500F0C51A /* Credits.rtf */; };
+		DC71320D156B71A500F0C51A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DC71320C156B71A500F0C51A /* AppDelegate.m */; };
+		DC713210156B71A600F0C51A /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC71320E156B71A600F0C51A /* MainMenu.xib */; };
+		DCCCCFF517F4F7630097500C /* XcodeColors.m in Sources */ = {isa = PBXBuildFile; fileRef = DCCCCFF417F4F7630097500C /* XcodeColors.m */; };
+		DCCCCFFC17F4F7C40097500C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DCCCCFFA17F4F7C30097500C /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		19FD4825133A590C0072594E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents;
-			dstSubfolderSpec = 1;
-			files = (
-				19FD4826133A59190072594E /* version.plist in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
+/* Begin PBXContainerItemProxy section */
+		DC3E080417F4F57600994B5F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 089C1669FE841209C02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8D5B49AC048680CD000E48DA;
+			remoteInfo = XcodeColors;
 		};
-/* End PBXCopyFilesBuildPhase section */
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		089C1672FE841209C02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		19A131E6123E5A9800B2532F /* XcodeColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XcodeColors.h; sourceTree = "<group>"; };
-		19A131E7123E5A9800B2532F /* XcodeColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XcodeColors.m; sourceTree = "<group>"; };
-		19FCB50412410E410095CF63 /* MethodReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MethodReplace.h; sourceTree = "<group>"; };
-		19FCB50512410E410095CF63 /* MethodReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MethodReplace.m; sourceTree = "<group>"; };
-		19FD4822133A58110072594E /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
-		32DBCF630370AF2F00C91783 /* XcodeColors_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XcodeColors_Prefix.pch; sourceTree = "<group>"; };
-		8D5B49B6048680CD000E48DA /* XcodeColors.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeColors.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
-		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = XcodeColors.xcplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		D253754419E5E84700AF94FA /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = XcodeColors/JRSwizzle.h; sourceTree = "<group>"; };
+		D253754519E5E84700AF94FA /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = XcodeColors/JRSwizzle.m; sourceTree = "<group>"; };
 		D2F7E65807B2D6F200F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+		DC7131F6156B71A500F0C51A /* TestXcodeColors.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestXcodeColors.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC7131F9156B71A500F0C51A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		DC7131FC156B71A500F0C51A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		DC7131FD156B71A500F0C51A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		DC7131FE156B71A500F0C51A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		DC713201156B71A500F0C51A /* TestXcodeColors-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TestXcodeColors-Info.plist"; sourceTree = "<group>"; };
+		DC713203156B71A500F0C51A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		DC713205156B71A500F0C51A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DC713207156B71A500F0C51A /* TestXcodeColors-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TestXcodeColors-Prefix.pch"; sourceTree = "<group>"; };
+		DC713209156B71A500F0C51A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		DC71320B156B71A500F0C51A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DC71320C156B71A500F0C51A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DC71320F156B71A600F0C51A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		DCCCCFF317F4F7630097500C /* XcodeColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XcodeColors.h; path = XcodeColors/XcodeColors.h; sourceTree = "<group>"; };
+		DCCCCFF417F4F7630097500C /* XcodeColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XcodeColors.m; path = XcodeColors/XcodeColors.m; sourceTree = "<group>"; };
+		DCCCCFF717F4F77C0097500C /* XcodeColors_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XcodeColors_Prefix.pch; path = XcodeColors/XcodeColors_Prefix.pch; sourceTree = "<group>"; };
+		DCCCCFF817F4F7AE0097500C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = XcodeColors/Info.plist; sourceTree = "<group>"; };
+		DCCCCFFB17F4F7C30097500C /* English */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = English; path = XcodeColors/English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,16 +66,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DC7131F3156B71A500F0C51A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC7131FA156B71A500F0C51A /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		089C166AFE841209C02AAC07 /* XcodeColors */ = {
 			isa = PBXGroup;
 			children = (
-				08FB77AFFE84173DC02AAC07 /* Classes */,
-				32C88E010371C26100C91783 /* Other Sources */,
-				089C167CFE841241C02AAC07 /* Resources */,
-				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+				DCCCCFF617F4F7690097500C /* XcodeColors */,
+				DC7131FF156B71A500F0C51A /* TestXcodeColors */,
 				19C28FB8FE9D52D311CA2CBB /* Products */,
 			);
 			name = XcodeColors;
@@ -76,23 +96,13 @@
 			name = "Frameworks and Libraries";
 			sourceTree = "<group>";
 		};
-		089C167CFE841241C02AAC07 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				19FD4822133A58110072594E /* version.plist */,
-				8D5B49B7048680CD000E48DA /* Info.plist */,
-				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		08FB77AFFE84173DC02AAC07 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				19A131E6123E5A9800B2532F /* XcodeColors.h */,
-				19A131E7123E5A9800B2532F /* XcodeColors.m */,
-				19FCB50412410E410095CF63 /* MethodReplace.h */,
-				19FCB50512410E410095CF63 /* MethodReplace.m */,
+				DCCCCFF317F4F7630097500C /* XcodeColors.h */,
+				DCCCCFF417F4F7630097500C /* XcodeColors.m */,
+				D253754419E5E84700AF94FA /* JRSwizzle.h */,
+				D253754519E5E84700AF94FA /* JRSwizzle.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -118,17 +128,90 @@
 		19C28FB8FE9D52D311CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D5B49B6048680CD000E48DA /* XcodeColors.bundle */,
+				8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */,
+				DC7131F6156B71A500F0C51A /* TestXcodeColors.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		32C88E010371C26100C91783 /* Other Sources */ = {
+		32C88E010371C26100C91783 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				32DBCF630370AF2F00C91783 /* XcodeColors_Prefix.pch */,
+				DCCCCFF817F4F7AE0097500C /* Info.plist */,
+				DCCCCFFA17F4F7C30097500C /* InfoPlist.strings */,
+				DCCCCFF717F4F77C0097500C /* XcodeColors_Prefix.pch */,
 			);
-			name = "Other Sources";
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DC7131F8156B71A500F0C51A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCCCCFFD17F4F7E20097500C /* Linked Frameworks */,
+				DC7131FB156B71A500F0C51A /* Other Frameworks */,
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		DC7131FB156B71A500F0C51A /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC7131FC156B71A500F0C51A /* AppKit.framework */,
+				DC7131FD156B71A500F0C51A /* CoreData.framework */,
+				DC7131FE156B71A500F0C51A /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		DC7131FF156B71A500F0C51A /* TestXcodeColors */ = {
+			isa = PBXGroup;
+			children = (
+				DCCCCFFE17F4F8020097500C /* Classes */,
+				DC713200156B71A500F0C51A /* Supporting Files */,
+				DC7131F8156B71A500F0C51A /* Frameworks */,
+			);
+			path = TestXcodeColors;
+			sourceTree = "<group>";
+		};
+		DC713200156B71A500F0C51A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DC713201156B71A500F0C51A /* TestXcodeColors-Info.plist */,
+				DC713202156B71A500F0C51A /* InfoPlist.strings */,
+				DC713207156B71A500F0C51A /* TestXcodeColors-Prefix.pch */,
+				DC713205156B71A500F0C51A /* main.m */,
+				DC713208156B71A500F0C51A /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCCCCFF617F4F7690097500C /* XcodeColors */ = {
+			isa = PBXGroup;
+			children = (
+				08FB77AFFE84173DC02AAC07 /* Classes */,
+				32C88E010371C26100C91783 /* Supporting Files */,
+				089C1671FE841209C02AAC07 /* Frameworks and Libraries */,
+			);
+			name = XcodeColors;
+			sourceTree = "<group>";
+		};
+		DCCCCFFD17F4F7E20097500C /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DC7131F9156B71A500F0C51A /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		DCCCCFFE17F4F8020097500C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DC71320B156B71A500F0C51A /* AppDelegate.h */,
+				DC71320C156B71A500F0C51A /* AppDelegate.m */,
+				DC71320E156B71A600F0C51A /* MainMenu.xib */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,10 +222,8 @@
 			buildConfigurationList = 1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "XcodeColors" */;
 			buildPhases = (
 				8D5B49AF048680CD000E48DA /* Resources */,
-				19FD4825133A590C0072594E /* CopyFiles */,
 				8D5B49B1048680CD000E48DA /* Sources */,
 				8D5B49B3048680CD000E48DA /* Frameworks */,
-				19863EE81240DD900067FA40 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -151,8 +232,26 @@
 			name = XcodeColors;
 			productInstallPath = "$(HOME)/Library/Bundles";
 			productName = XcodeColors;
-			productReference = 8D5B49B6048680CD000E48DA /* XcodeColors.bundle */;
+			productReference = 8D5B49B6048680CD000E48DA /* XcodeColors.xcplugin */;
 			productType = "com.apple.product-type.bundle";
+		};
+		DC7131F5156B71A500F0C51A /* TestXcodeColors */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC713213156B71A600F0C51A /* Build configuration list for PBXNativeTarget "TestXcodeColors" */;
+			buildPhases = (
+				DC7131F2156B71A500F0C51A /* Sources */,
+				DC7131F3156B71A500F0C51A /* Frameworks */,
+				DC7131F4156B71A500F0C51A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC3E080517F4F57600994B5F /* PBXTargetDependency */,
+			);
+			name = TestXcodeColors;
+			productName = TestXcodeColors;
+			productReference = DC7131F6156B71A500F0C51A /* TestXcodeColors.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -160,7 +259,7 @@
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "XcodeColors" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -171,12 +270,14 @@
 				Japanese,
 				French,
 				German,
+				en,
 			);
 			mainGroup = 089C166AFE841209C02AAC07 /* XcodeColors */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8D5B49AC048680CD000E48DA /* XcodeColors */,
+				DC7131F5156B71A500F0C51A /* TestXcodeColors */,
 			);
 		};
 /* End PBXProject section */
@@ -186,45 +287,80 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
+				DCCCCFFC17F4F7C40097500C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7131F4156B71A500F0C51A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC713204156B71A500F0C51A /* InfoPlist.strings in Resources */,
+				DC71320A156B71A500F0C51A /* Credits.rtf in Resources */,
+				DC713210156B71A600F0C51A /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		19863EE81240DD900067FA40 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./xcb-install.pl";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D5B49B1048680CD000E48DA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19A131E8123E5A9800B2532F /* XcodeColors.m in Sources */,
-				19FCB50612410E410095CF63 /* MethodReplace.m in Sources */,
+				D253754619E5E84700AF94FA /* JRSwizzle.m in Sources */,
+				DCCCCFF517F4F7630097500C /* XcodeColors.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC7131F2156B71A500F0C51A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC713206156B71A500F0C51A /* main.m in Sources */,
+				DC71320D156B71A500F0C51A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		DC3E080517F4F57600994B5F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8D5B49AC048680CD000E48DA /* XcodeColors */;
+			targetProxy = DC3E080417F4F57600994B5F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		089C167DFE841241C02AAC07 /* InfoPlist.strings */ = {
+		DC713202156B71A500F0C51A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C167EFE841241C02AAC07 /* English */,
+				DC713203156B71A500F0C51A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		DC713208156B71A500F0C51A /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC713209156B71A500F0C51A /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		DC71320E156B71A600F0C51A /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DC71320F156B71A600F0C51A /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		DCCCCFFA17F4F7C30097500C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCCCCFFB17F4F7C30097500C /* English */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -232,65 +368,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1DEB913B08733D840010E9CD /* Debug */ = {
+		DC6E8ED417F4F0B400373006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = XcodeColors_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				PRODUCT_NAME = XcodeColors;
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		1DEB913C08733D840010E9CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = XcodeColors_Prefix.pch;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(HOME)/Library/Bundles";
-				PRODUCT_NAME = XcodeColors;
-				WRAPPER_EXTENSION = bundle;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		1DEB913F08733D840010E9CD /* Debug */ = {
+		DC6E8ED517F4F0B400373006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Igor Belyaletdinov";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = macosx10.6;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEPLOYMENT_LOCATION = YES;
+				DSTROOT = "$(HOME)";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = XcodeColors/XcodeColors_Prefix.pch;
+				INFOPLIST_FILE = XcodeColors/Info.plist;
+				INSTALL_PATH = "/Library/Application Support/Developer/Shared/Xcode/Plug-ins";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deusty.${PRODUCT_NAME}";
+				PRODUCT_NAME = XcodeColors;
+				WRAPPER_EXTENSION = xcplugin;
 			};
-			name = Debug;
+			name = Release;
 		};
-		1DEB914008733D840010E9CD /* Release */ = {
+		DC6E8ED617F4F0B400373006 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Igor Belyaletdinov";
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_ENABLE_OBJC_GC = supported;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.5;
-				SDKROOT = macosx10.6;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TestXcodeColors/TestXcodeColors-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				INFOPLIST_FILE = "TestXcodeColors/TestXcodeColors-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.deusty.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
 		};
@@ -300,8 +425,7 @@
 		1DEB913A08733D840010E9CD /* Build configuration list for PBXNativeTarget "XcodeColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB913B08733D840010E9CD /* Debug */,
-				1DEB913C08733D840010E9CD /* Release */,
+				DC6E8ED517F4F0B400373006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -309,8 +433,15 @@
 		1DEB913E08733D840010E9CD /* Build configuration list for PBXProject "XcodeColors" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1DEB913F08733D840010E9CD /* Debug */,
-				1DEB914008733D840010E9CD /* Release */,
+				DC6E8ED417F4F0B400373006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC713213156B71A600F0C51A /* Build configuration list for PBXNativeTarget "TestXcodeColors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC6E8ED617F4F0B400373006 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
